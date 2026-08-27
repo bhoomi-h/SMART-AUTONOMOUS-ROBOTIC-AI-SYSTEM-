@@ -1,0 +1,26 @@
+
+from gpiozero import Motor, DistanceSensor 
+from time import sleep 
+ 
+SAFE_DISTANCE = 80 
+ 
+sensor = DistanceSensor( 
+    echo=6, 
+    trigger=13, 
+    max_distance=4 
+) 
+ 
+while True: 
+ 
+    distance_cm = sensor.distance * 100 
+ 
+    if distance_cm < SAFE_DISTANCE: 
+ 
+        print("Obstacle Detected") 
+ 
+    else: 
+ 
+        print("Clear Path") 
+ 
+    sleep(1) 
+ 
