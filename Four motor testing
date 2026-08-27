@@ -1,0 +1,24 @@
+from time import sleep 
+from gpiozero import Motor 
+ 
+left_motor_front = Motor( 
+    forward=17, 
+    backward=27, 
+    enable=12, 
+    pwm=True 
+) 
+ 
+right_motor_front = Motor( 
+    forward=15, 
+    backward=18, 
+    enable=14, 
+    pwm=True 
+) 
+ 
+left_motor_front.forward(0.5) 
+right_motor_front.forward(0.5) 
+ 
+sleep(8) 
+ 
+left_motor_front.stop() 
+right_motor_front.stop() 
