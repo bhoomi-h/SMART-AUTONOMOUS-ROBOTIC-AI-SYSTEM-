@@ -1,0 +1,9 @@
+import asyncio 
+from mcp import ClientSession 
+from mcp.client.stdio import stdio_client 
+async def agent(description): 
+text = description.lower() 
+if "left side is clear" in text: 
+result = await session.call_tool("left") 
+elif "front is clear" in text: 
+result = await session.call_tool("forward") 
