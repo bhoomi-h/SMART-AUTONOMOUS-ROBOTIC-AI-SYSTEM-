@@ -1,0 +1,16 @@
+from gpiozero import Motor 
+from time import sleep 
+from mcp.server.fastmcp import FastMCP 
+mcp = FastMCP("4WheelRobot") 
+@mcp.tool() 
+def forward(): 
+left_front.forward(0.6) 
+right_front.forward(0.6) 
+sleep(2) 
+stop() 
+@mcp.tool() 
+def stop(): 
+left_front.stop() 
+right_front.stop() 
+if __name__ == "__main__": 
+mcp.run(transport="stdio")
